@@ -1,0 +1,27 @@
+BROF — Lisans / License
+
+Copyright (c) 2026 Kerem Ulusoy. Tüm hakları saklıdır. All rights reserved.
+
+TÜRKÇE
+BROF'u ücretsiz olarak kullanabilir ve değiştirilmemiş haliyle dağıtabilirsiniz;
+buna Linux paket depoları ve uygulama mağazaları (Flathub, Snap Store, AUR vb.)
+da dahildir. BROF'un kaynak kodu açık değildir. Programı değiştirmek ya da
+satmak yasaktır; yasaların açıkça izin verdiği durumlar dışında tersine
+mühendislik yapılamaz. Yazılım "olduğu gibi" sunulur; açık ya da örtük hiçbir
+garanti verilmez ve yürürlükteki yasaların izin verdiği en geniş ölçüde,
+yazılımın kullanımından doğan zararlardan yazar sorumlu tutulamaz.
+Bu metnin Türkçe ve İngilizce halleri arasında çelişki olursa Türkçe metin esastır.
+
+ENGLISH
+You may use BROF free of charge and redistribute it unmodified, including
+through Linux package repositories and app stores (such as Flathub, the Snap
+Store and the AUR). BROF is not open source. Modifying or selling the software
+is not permitted, and reverse engineering is not permitted except where
+expressly allowed by applicable law. The software is provided "as is", without
+warranty of any kind, express or implied, and to the fullest extent permitted
+by applicable law the author is not liable for any damages arising from its use.
+If the Turkish and English versions conflict, the Turkish version prevails.
+
+BROF includes Electron and Chromium, which are distributed under their own
+licenses (see LICENSE.electron.txt and LICENSES.chromium.html), and the Inter
+and Bricolage Grotesque typefaces, distributed under the SIL Open Font License.

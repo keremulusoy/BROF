@@ -1,0 +1,28 @@
+# Maintainer: Kerem Ulusoy <keremulusoy at gmail dot com>
+pkgname=brof-bin
+pkgver=1.2.1
+pkgrel=1
+pkgdesc="Open Office files in Google Docs, Sheets and Slides and write your edits back to the file on your computer"
+arch=('x86_64')
+url="https://brof-app.netlify.app"
+license=('LicenseRef-BROF')
+depends=('gtk3' 'nss' 'alsa-lib' 'libxss' 'libxtst' 'libsecret' 'xdg-utils')
+optdepends=('libreoffice: open Apple Pages/Numbers/Keynote, WPS, Hangul and other formats Google cannot open'
+            'chromium: open documents in an app window (Google Chrome or Microsoft Edge also work)')
+provides=('brof')
+conflicts=('brof')
+options=('!strip' '!debug')
+source=("BROF-${pkgver}-x86_64.tar.gz::https://github.com/keremulusoy/BROF/releases/download/v${pkgver}/BROF-${pkgver}-x86_64.tar.gz")
+sha256sums=('7b71ffce40564fc47de6ef502251eb03748d4dada0119a07361e68979414e702')
+
+package() {
+  install -d "${pkgdir}/opt/brof"
+  cp -a "${srcdir}/BROF-${pkgver}-x86_64/." "${pkgdir}/opt/brof/"
+  chmod 4755 "${pkgdir}/opt/brof/chrome-sandbox"
+  install -d "${pkgdir}/usr/bin"
+  ln -s /opt/brof/brof "${pkgdir}/usr/bin/brof"
+  install -Dm644 "${srcdir}/BROF-${pkgver}-x86_64/resources/linux/brof.desktop" "${pkgdir}/usr/share/applications/brof.desktop"
+  install -Dm644 "${srcdir}/BROF-${pkgver}-x86_64/resources/ikonlar/uygulama.png" "${pkgdir}/usr/share/icons/hicolor/256x256/apps/brof.png"
+  install -Dm644 "${srcdir}/BROF-${pkgver}-x86_64/resources/linux/brof-mime.xml" "${pkgdir}/usr/share/mime/packages/brof.xml"
+  install -Dm644 "${srcdir}/BROF-${pkgver}-x86_64/resources/linux/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

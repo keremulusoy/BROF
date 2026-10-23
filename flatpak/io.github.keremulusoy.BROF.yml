@@ -1,0 +1,45 @@
+app-id: io.github.keremulusoy.BROF
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: '24.08'
+command: brof
+separate-locales: false
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=x11
+  - --device=dri
+  # Office files anywhere in the home folder are opened and written back in place
+  - --filesystem=home
+  - --talk-name=org.freedesktop.Notifications
+  # Google session key is stored in the system keyring
+  - --talk-name=org.freedesktop.secrets
+  - --talk-name=org.kde.StatusNotifierWatcher
+modules:
+  - name: brof
+    buildsystem: simple
+    build-commands:
+      - install -d /app/brof
+      - cp -a app/. /app/brof/
+      - install -Dm755 brof.sh /app/bin/brof
+      - install -Dm644 app/resources/linux/io.github.keremulusoy.BROF.desktop /app/share/applications/io.github.keremulusoy.BROF.desktop
+      - install -Dm644 app/resources/linux/io.github.keremulusoy.BROF.metainfo.xml /app/share/metainfo/io.github.keremulusoy.BROF.metainfo.xml
+      - install -Dm644 app/resources/ikonlar/uygulama.png /app/share/icons/hicolor/256x256/apps/io.github.keremulusoy.BROF.png
+      - install -Dm644 app/resources/linux/brof-mime.xml /app/share/mime/packages/io.github.keremulusoy.BROF.xml
+      - install -Dm644 app/resources/linux/LICENSE /app/share/licenses/io.github.keremulusoy.BROF/LICENSE
+    sources:
+      - type: archive
+        url: https://github.com/keremulusoy/BROF/releases/download/v1.2.1/BROF-1.2.1-x86_64.tar.gz
+        sha256: '7b71ffce40564fc47de6ef502251eb03748d4dada0119a07361e68979414e702'
+        dest: app
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/keremulusoy/BROF/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          url-query: '"https://github.com/keremulusoy/BROF/releases/download/v" + $version + "/BROF-" + $version + "-x86_64.tar.gz"'
+      - type: script
+        dest-filename: brof.sh
+        commands:
+          - exec zypak-wrapper /app/brof/brof "$@"
