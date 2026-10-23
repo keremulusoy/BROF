@@ -14,7 +14,6 @@ Bu depo BROF'un Linux paketlerini ve paket tanımlarını barındırır; kaynak 
 |---|---|
 | **Windows** | [Microsoft Store](https://apps.microsoft.com/detail/9N91QTTXXCPL) |
 | **Ubuntu ve Snap destekleyen dağıtımlar** | `sudo snap install brof` |
-| **Flathub (Fedora, Linux Mint, Pop!_OS…)** | `flatpak install flathub io.github.keremulusoy.BROF` |
 | **Arch, CachyOS, Manjaro (AUR)** | `yay -S brof-bin` ya da `paru -S brof-bin` |
 | **AppImage (her dağıtım / any distro)** | [Releases](https://github.com/keremulusoy/BROF/releases/latest) sayfasından `BROF-…-x86_64.AppImage` dosyasını indir, çalıştırılabilir yap ve aç |
 

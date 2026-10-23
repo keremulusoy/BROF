@@ -4,7 +4,7 @@ Copyright (c) 2026 Kerem Ulusoy. Tüm hakları saklıdır. All rights reserved.
 
 TÜRKÇE
 BROF'u ücretsiz olarak kullanabilir ve değiştirilmemiş haliyle dağıtabilirsiniz;
-buna Linux paket depoları ve uygulama mağazaları (Flathub, Snap Store, AUR vb.)
+buna Linux paket depoları ve uygulama mağazaları (Snap Store, AUR vb.)
 da dahildir. BROF'un kaynak kodu açık değildir. Programı değiştirmek ya da
 satmak yasaktır; yasaların açıkça izin verdiği durumlar dışında tersine
 mühendislik yapılamaz. Yazılım "olduğu gibi" sunulur; açık ya da örtük hiçbir
@@ -14,8 +14,8 @@ Bu metnin Türkçe ve İngilizce halleri arasında çelişki olursa Türkçe met
 
 ENGLISH
 You may use BROF free of charge and redistribute it unmodified, including
-through Linux package repositories and app stores (such as Flathub, the Snap
-Store and the AUR). BROF is not open source. Modifying or selling the software
+through Linux package repositories and app stores (such as the Snap Store and
+the AUR). BROF is not open source. Modifying or selling the software
 is not permitted, and reverse engineering is not permitted except where
 expressly allowed by applicable law. The software is provided "as is", without
 warranty of any kind, express or implied, and to the fullest extent permitted
